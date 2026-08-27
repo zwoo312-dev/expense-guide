@@ -5,7 +5,7 @@ const sections=[{"title":"사전기안","question":"비용을 집행하기 전�
 const navBtns=document.getElementById('navBtns');
 const navSearch=document.getElementById('navSearch');
 const content=document.getElementById('content');
-let activeIndex=0;
+let activeIndex=-1;
 
 sections.forEach(s=>{
   const plain=s.body.replace(/<[^>]+>/g,' ').replace(/\s+/g,' ').trim();
@@ -50,7 +50,7 @@ function renderNav(query){
 navSearch.addEventListener('input',()=>renderNav(navSearch.value));
 
 renderNav('');
-show(0);
+content.innerHTML='<div class="empty"><b>왼쪽에서 궁금한 업무를 선택해주세요</b><p>또는 검색창에 키워드를 입력해 바로 찾아보세요.</p></div>';
 
 const SITE_PASSWORD = "wooriwa";
 const pwInput = document.getElementById('pw');
